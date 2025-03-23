@@ -42,7 +42,14 @@ const Landing = () => {
 
 
             } catch (e) {
-                console.error('error al obtener datos', e)
+                console.error('Error al obtener datos', { cause : e})
+
+
+
+            } finally {
+
+                controller.abort();
+                console.log('Solicitud finalizada')
             }
 
         }
